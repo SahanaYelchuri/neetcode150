@@ -1,0 +1,35 @@
+Python
+
+Create an empty set and check if a number already exists in the set, if yes return true else just append the element to the set
+
+def hasDuplicate(self, nums: List[int]) -> bool:
+  lst=set()
+  for num in nums:
+    if num in lst:
+      return True
+    lst.add(num)
+  return False
+
+Time : O(n)
+Space: O(n)
+
+Initially used list instead of set
+Time : O(n^2), because for each element in nums, you are performing an O(n) check (num in lst)
+Space: O(n)
+
+*******************************************************************************************************************************************************************************
+C++
+
+Create an empty set as set can only have unique items. If num already in set return true else just add to set
+
+bool hasDuplicate(vector<int>& nums) {
+  unordered_set<int> lst;
+  for(int num:nums){
+    if(lst.find(num) != lst.end()){
+      return true
+    }
+    lst.insert(num)
+  return false;
+  }
+Time: O(n), lookup/insert in set O(1)
+Space:O(n)
